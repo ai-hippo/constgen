@@ -1,0 +1,21 @@
+name: Food
+
+profiles:
+  string:
+    NOODLES: "NOODLES"
+    BURGERS: "BURGERS"
+    FRIED_CHICKEN: "FRIED_CHICKEN"
+    PIZZA: "PIZZA"
+
+  integer:
+
+targets:
+  python:
+    enabled: true
+    profiles: [string]
+  java:
+    enabled: true
+    profiles: [string]
+  react:
+    enabled: true
+    profiles: [string]

@@ -1,0 +1,40 @@
+name: BooleanCodes
+
+profiles:
+  string:
+    YES: "YES"
+    NO: "NO"
+    functions:
+      isYes: [YES]
+      isNo: [NO]
+
+  integer:
+    YES: 1
+    NO: 0
+
+targets:
+  php:
+    enabled: true
+    profiles: [string, integer]
+    function_signatures:
+      isNo: "public static function isNo($value) { return in_array(strtoupper($value), [self::NO, 'N', 'n']); }"
+  go:
+    enabled: true
+    profiles: [string, integer]
+    function_signatures:
+      isNo: 'func IsNo(value string) bool { v := strings.ToUpper(value); return v == NO || v == "N" || v == "n" }'
+  java:
+    enabled: true
+    profiles: [string, integer]
+    function_signatures:
+      isNo: 'public static boolean isNo(String value) { if (value == null) return false; String v = value.toUpperCase(); return v.equals(NO) || v.equals("N") || v.equals("n"); }'
+  vue:
+    enabled: true
+    profiles: [string, integer]
+    function_signatures:
+      isNo: 'isNo: (value) => { const v = String(value).toUpperCase(); return v === "NO" || v === "N" || v === "n"; },'
+  react:
+    enabled: true
+    profiles: [string, integer]
+    function_signatures:
+      isNo: '"isNo": (value) => { const v = String(value).toUpperCase(); return v === "NO" || v === "N" || v === "n"; },'

@@ -1,0 +1,25 @@
+name: Fruits
+
+profiles:
+  string:
+    "APPLE": "APPLE"
+    "BANANA": "BANANA"
+    "ORANGE": "ORANGE"
+    "GRAPE": "GRAPE"
+    "MANGO": "MANGO"
+    "PINEAPPLE": "PINEAPPLE"
+    "STRAWBERRY": "STRAWBERRY"
+    "WATERMELON": "WATERMELON"
+    functions:
+      isBanana: [BANANA]
+      isMango: [MANGO]
+
+  integer:
+
+targets:
+  python:
+    enabled: true
+    profiles: [string]
+  vue:
+    enabled: true
+    profiles: [string]
